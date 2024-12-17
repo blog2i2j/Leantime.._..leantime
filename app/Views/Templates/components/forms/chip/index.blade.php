@@ -42,17 +42,17 @@
             &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
         </a>
 
-        <ul class="dropdown-menu" 
+        <ul class="dropdown-menu chip-list" 
             aria-labelledby="{{ $type }}DropdownMenuLink{{ $parentId }}"
         >
             {{ $slot }}
-
+            
             @if($quickaddOption)
-                <x-global::forms.chip.quick-add
-                    :type="$type"
-                    :parentId="$parentId"
-                    :postUrl="$quickaddPostUrl"
-                />
+                    <x-global::forms.chip.quick-add
+                        :type="$type"
+                        :parentId="$parentId"
+                        :postUrl="$quickaddPostUrl"
+                    />
             @endif
         </ul>
         <input type="hidden" name="{{ $type }}Field" value="{{ $selectedKey }}" id="dropdownPillInput-{{ $parentId }}-{{ $type }}" />
